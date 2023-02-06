@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/calText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="end"
+        android:textSize="30sp"
+        android:text="Number Input"
+        android:textColor="@color/defaultTextColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/resultText"
+        />
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="result"
+        android:textColor="@color/defaultTextColor"
+        android:textSize="24sp"
+        android:gravity="end"
+        android:padding="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/keyPadFlow"
+        />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/keyPadFlow"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.7"
+        app:layout_constraintVertical_bias="1"
+        app:flow_maxElementsWrap="4"
+        app:flow_wrapMode="chain"
+        app:flow_horizontalGap="8dp"
+        app:constraint_referenced_ids="btn1,btn2,btn3,btnClear,btn4,btn5,btn6,btnPlus,btn7,btn8,btn9,btnMiuns,btn0,btnEqual"
+        />
+    <Button
+        android:id="@+id/btn1"
+        style="@style/NumKeypad"
+        android:text="1"
+        android:onClick="numberClicked"
+        />
+    <Button
+        android:id="@+id/btn2"
+        style="@style/NumKeypad"
+        android:onClick="numberClicked"
+        android:text="2"
+        />
+    <Button
+        android:id="@+id/btn3"
+        style="@style/NumKeypad"
+        android:onClick="numberClicked"
+        android:text="3"
+        />
+
+    <Button
+        android:id="@+id/btn4"
+        style="@style/NumKeypad"
+        android:onClick="numberClicked"
+        android:text="4"
+        />
+    <Button
+        android:id="@+id/btn5"
+        style="@style/NumKeypad"
+        android:onClick="numberClicked"
+        android:text="5"
+        />
+    <Button
+        android:id="@+id/btn6"
+        style="@style/NumKeypad"
+        android:onClick="numberClicked"
+        android:text="6"
+        />
+
+    <Button
+        android:id="@+id/btn7"
+        style="@style/NumKeypad"
+        android:onClick="numberClicked"
+        android:text="7"
+        />
+    <Button
+        android:id="@+id/btn8"
+        style="@style/NumKeypad"
+        android:onClick="numberClicked"
+        android:text="8"
+        />
+    <Button
+        android:id="@+id/btn9"
+        style="@style/NumKeypad"
+        android:onClick="numberClicked"
+        android:text="9"
+        />
+
+    <Button
+        app:layout_constraintHorizontal_weight="1"
+        android:id="@+id/btn0"
+        style="@style/NumKeypad"
+        android:onClick="numberClicked"
+        android:text="0"
+        />
+
+    <Button
+        app:layout_constraintHorizontal_weight="3"
+        android:id="@+id/btnEqual"
+        style="@style/operator"
+        android:onClick="equalClicked"
+        android:text="="
+        />
+
+    <Button
+        android:id="@+id/btnClear"
+        style="@style/operator"
+        android:onClick="clearClicked"
+        android:text="C"
+        />
+
+    <Button
+        android:id="@+id/btnPlus"
+        style="@style/operator"
+        android:onClick="operatorClicked"
+        android:text="+"
+        />
+
+    <Button
+        android:id="@+id/btnMiuns"
+        style="@style/operator"
+        android:onClick="operatorClicked"
+        android:text="-"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
