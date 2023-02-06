@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:text="이름"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nameValue"
+        style="@style/Value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="36dp"
+        android:gravity="end"
+        android:maxLines="1"
+        android:text="최지훈"
+        app:layout_constraintBaseline_toBaselineOf="@+id/name"
+        app:layout_constraintBottom_toBottomOf="@+id/name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guide"
+        app:layout_constraintTop_toTopOf="@+id/name" />
+
+    <TextView
+        android:id="@+id/birthDay"
+        style="@style/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="생년월일"
+        app:layout_constraintStart_toStartOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <TextView
+        android:id="@+id/birthValue"
+        style="@style/Value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="0000-00-00"
+        app:layout_constraintBaseline_toBaselineOf="@+id/birthDay"
+        app:layout_constraintEnd_toEndOf="@+id/nameValue" />
+
+    <TextView
+        android:id="@+id/ABO"
+        style="@style/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="혈액형"
+        app:layout_constraintStart_toStartOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/birthDay" />
+
+    <TextView
+        android:id="@+id/ABOValue"
+        style="@style/Value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="A"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ABO"
+        app:layout_constraintEnd_toEndOf="@+id/nameValue" />
+
+    <TextView
+        android:id="@+id/emergency"
+        style="@style/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비상 연락처"
+        app:layout_constraintStart_toStartOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/ABO" />
+
+    <TextView
+        android:id="@+id/emergencyValue"
+        style="@style/Value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:hint="000-0000-0000"
+        app:layout_constraintBaseline_toBaselineOf="@+id/emergency"
+        app:layout_constraintEnd_toEndOf="@+id/nameValue"
+        app:layout_constraintEnd_toStartOf="@id/call" />
+
+    <ImageView
+        android:id="@+id/call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_phone_24"
+        app:layout_constraintBottom_toBottomOf="@id/emergencyValue"
+        app:layout_constraintEnd_toEndOf="@id/nameValue"
+        app:layout_constraintStart_toEndOf="@id/emergencyValue"
+        app:layout_constraintTop_toTopOf="@id/emergencyValue"
+
+        />
+
+    <TextView
+        android:id="@+id/warning"
+        style="@style/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="주의사항"
+        app:layout_constraintStart_toStartOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/emergency" />
+
+    <TextView
+        android:id="@+id/warningValue"
+        style="@style/Value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="주의사항"
+        app:layout_constraintBaseline_toBaselineOf="@+id/warning"
+        app:layout_constraintEnd_toEndOf="@+id/nameValue" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/goInputActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="36dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/baseline_edit_24" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="36dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/goInputActivity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/baseline_delete_24" />
+
+    <androidx.constraintlayout.helper.widget.Layer
+        android:id="@+id/callLayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="call,emergencyValue"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
