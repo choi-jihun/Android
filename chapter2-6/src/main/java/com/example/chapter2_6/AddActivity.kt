@@ -73,8 +73,13 @@ class AddActivity : AppCompatActivity() {
     private fun add() {
         val text = binding.textInputEditText.text.toString()
         val mean = binding.meanInputEditText.text.toString()
-        val type = findViewById<Chip>(binding.chipGroup.checkedChipId).text.toString()
+        val type = findViewById<Chip>(binding.chipGroup.checkedChipId)?.text.toString()
         val word = Word(text, mean, type)
+
+        when(type){
+            null -> runOnUiThread { println(Toast.makeText(this,"품사를 선택하세요",Toast.LENGTH_SHORT)) }
+            else -> "알 수 없음"
+        }
 
         Thread {
             AppDatabase.getInstance(this)?.wordDao()?.insert(word)
